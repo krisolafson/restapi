@@ -282,7 +282,7 @@ function restapi_page_callback(ResourceConfigurationInterface $resource) {
   global $user;
 
   $request = restapi_get_request();
-  $path    = current_path();
+  $path    = substr(url(current_path()), 1);
   $auth    = $resource->invokeAuthenticationService($user, $request);
 
   try {
