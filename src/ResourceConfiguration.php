@@ -192,6 +192,9 @@ class ResourceConfiguration implements ResourceConfigurationInterface {
    */
   public function getArgumentsForPath($path) {
 
+    # URL decode every path in case it contains special characters
+    $path = rawurldecode($path);
+
     if (!$this->matchesPath($path)) {
       return [];
     }
