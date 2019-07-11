@@ -57,7 +57,7 @@ class ResourceConfigurationTest extends PHPUnit_Framework_TestCase {
 
     $this->assertEquals($args, ['to']);
 
-    $config = new ResourceConfiguration('path/%/resource', 'my_module', $this->class, $this->auth);
+    $config = new ResourceConfiguration('path/%/chars', 'my_module', $this->class, $this->auth);
     $args   = $config->getArgumentsForPath('path/special%23%3F%2A/chars');
 
     $this->assertEquals($args, ['special#?*']);
